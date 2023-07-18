@@ -119,15 +119,30 @@ body {
     gap: 5rem;
 }
 
+.header-shape {
+    position: absolute;
+    top: 0;
+    right: 25%;
+    width: 50%;
+    padding: 1rem;
+    background-color: var(--neutral-900);
+    z-index: 5000;
+    border-radius: 100vw;
+}
+
 .phone-container {
     display: flex;
+    position: relative;
     flex-direction: column;
     z-index: 100;
     border: 10px solid var(--neutral-900);
     border-radius: 2em;
     background-color: var(--primary-900);
     font-size: var(--fs-text);
+    min-width: 450px;
+    pointer-events: none;
 }
+
 
 
 
@@ -182,15 +197,17 @@ body {
     padding: .8rem;
     width: 50%;
     border-radius: 1.5rem;
-    flex-wrap: wrap;
-
+    word-wrap: break-word;
 }
+
 
 .user-text {
     background-color: var(--neutral-700);
     color: var(--primary-500);
     justify-self: flex-start;
 }
+
+
 
 .friend-text {
     background-color: var(--neutral-900);
@@ -200,4 +217,14 @@ body {
 
 .phone-text-interface {
     padding: 2rem;
+}
+
+.highlighted-text {
+    font-weight: var(--fw-title);
+}
+
+@media screen and (max-width: 45em) {
+    .content-wrapper {
+        flex-direction: column;
+    }
 }
