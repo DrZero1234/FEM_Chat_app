@@ -93,6 +93,14 @@ svg {
     }
 }
 
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-125%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
 
 body {
     text-rendering: optimizeSpeed;
@@ -182,7 +190,10 @@ main {
     align-items: center;
     border-radius: 2em;
     padding: 0 1rem;
+}
 
+.animated {
+    animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
 .phone-header-left {
@@ -358,5 +369,9 @@ input[type="text"] {
 
     .page-introduction h1 {
         text-align: center;
+    }
+
+    .phone-content {
+        animation: none;
     }
 }
