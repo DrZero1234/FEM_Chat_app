@@ -2,22 +2,34 @@
 
 
 :root {
-    --primary-900: hsla(264, 26%, 95%, 1);
-    --primary-500: #a23cff;
+    --primary-900: hsl(270, 20%, 96%);
+    --primary-500: hsl(276, 55%, 52%);
 
-    --neutral-100: #3c274f;
-    --neutral-200: #594b6a;
-    --neutral-700: #ede4f4;
-    --neutral-400: #c2a0db;
+
+    --neutral-100: hsl(271, 36%, 24%);
+    --neutral-200: hsl(271, 15%, 43%);
+    /* main title */
+    --neutral-400: hsl(271, 36%, 24%);
+    /* Paragraph */
+    --neutral-500: hsl(270, 7%, 64%);
+    --neutral-700: hsl(276, 100%, 81%);
+
+    --neutral-850: hsl(289, 100%, 72%);
     --neutral-900: #ffffff;
 
-    --fs-text: 0.875rem;
-    --fs-intro: 1.125rem;
-    --fs-main: 1.875rem;
+    --gradient-magenta: hsl(293, 100%, 63%);
+    --gradient-violet: hsl(264, 100%, 61%);
 
-    --fw-normal: 500;
-    --fw-title: 700;
-    --fw-main: 900;
+    --fs-text: 1rem;
+    --fs-higlight: 1.25rem;
+    --fs-intro: 1.125rem;
+    --fs-main: 3rem;
+
+    --fw-normal: 400;
+    --fw-title: 500;
+    --fw-main: 700;
+
+    --ff-main: font-family: 'Rubik', sans-serif;
 
 }
 
@@ -86,21 +98,37 @@ body {
     text-rendering: optimizeSpeed;
     line-height: 1.5;
     font-size: var(--fs-intro);
-    font-family: sans-serif;
+    font-family: var(--ff-main);
     font-weight: var(--fw-normal);
 }
 
-.background-shape {
+main {
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-sh {
     position: absolute;
+    min-height: 90%;
+    width: 35%;
+    background: linear-gradient(var(--gradient-magenta), var(--gradient-violet));
+    z-index: 10;
+}
+
+.bg-l {
     top: 0;
     left: 0;
-    min-height: 90vh;
-    margin-bottom: 3rem;
-    padding: 15rem;
-    background: linear-gradient(#bf40ff,#8f3bfc);
     border-bottom-left-radius: 100vw;
     border-bottom-right-radius: 100vw;
-    z-index: 10;
+
+}
+
+.bg-r {
+    bottom:0;
+    right:-10%;
+    border-top-left-radius: 100vw;
+    border-top-right-radius: 100vw;
+    opacity: .1;
 }
 
 .container {
@@ -115,13 +143,13 @@ body {
     flex-direction: row;
     z-index: 100;
     align-items: center;
-    margin: 8rem;
+    margin: 15rem;
     gap: 5rem;
 }
 
 .header-shape {
     position: absolute;
-    top: 0;
+    top: -10px;
     right: 25%;
     width: 50%;
     padding: 1rem;
@@ -148,7 +176,7 @@ body {
 
 
 .phone-header {
-    background: linear-gradient(to left,#bf40ff,#8f3bfc );
+    background: linear-gradient(to right,var(--gradient-violet),var(--gradient-magenta) );
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -171,14 +199,18 @@ body {
         -moz-border-radius: 500px;
 }
 
-.user-image {
-
-}
 
 .user-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+
+.user-status {
+    font-size: 0.875rem;
+    color: var(--neutral-700);
+    opacity: .8;
 }
 
 .icon-image {
@@ -202,16 +234,46 @@ body {
 
 
 .user-text {
-    background-color: var(--neutral-700);
+    background-color: #ede5f4;
     color: var(--primary-500);
     justify-self: flex-start;
+    border-bottom-left-radius: .5rem !important;
 }
 
+.vote-field input[type="radio"] {
+    appearance: none;
+}
+
+.vote-price {
+    font-weight: var(--fw-main);
+    font-size: 1.5rem;
+}
+
+.vote-field input[type="radio"] {
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    border: 2px solid var(--neutral-850);
+    border-radius: 50%;
+        /* Adjusts the position of the checkboxes on the text baseline */
+    vertical-align: -5px;
+        /* Set here so that Windows' High-Contrast Mode can override */
+}
+
+.vote-field {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to right, var(--gradient-magenta), var(--gradient-violet));
+    width: 75%;
+    padding: 1.25rem;
+    color: var(--neutral-900);
+}
 
 
 .friend-text {
     background-color: var(--neutral-900);
-    color: black;
+    color: var(--neutral-200);
+    border-bottom-right-radius: .5rem !important;
     align-self: flex-end;
 }
 
@@ -220,11 +282,81 @@ body {
 }
 
 .highlighted-text {
-    font-weight: var(--fw-title);
+    color: #ffffff;
+    font-weight: var(--fw-main);
+    font-size: var(--fs-higlight);
 }
+
+.chat-gallery {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: .5rem;
+    flex-wrap: wrap;
+    background-color: var(--primary-900);
+    width: 75%;
+}
+
+.chat-gallery img {
+    max-height: 75px;
+    border-radius: 1rem;
+    
+}
+
+input[type="text"] {
+    margin-top: 2rem;
+    width: 100%;
+    padding: 1.25rem;
+    border-radius: 2rem;
+    border: none;
+}
+
+.chat-input-wrapper {
+    position: relative;
+}
+
+.chat-input-wrapper i {
+    max-width: 44px;
+    max-height: 44px;
+    background-color: var(--neutral-100);
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: 45%;
+    margin-right: .5rem;
+}
+
+.page-introduction {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.page-introduction h1 {
+    font-size: var(--fs-main);
+    font-weight: var(--fw-main);
+    color: var(--neutral-400);
+}
+
+.page-introduction p {
+    color: var(--neutral-500);
+    line-height: 2rem;
+    word-wrap: break-word;
+}
+
 
 @media screen and (max-width: 45em) {
     .content-wrapper {
         flex-direction: column;
+
+    }
+
+    .bg-sh {
+        min-height: 50%;
+        padding: 10rem;
+    }
+
+    .page-introduction h1 {
+        text-align: center;
     }
 }

@@ -7,6 +7,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | [Challenge Name Here]</title>
+  <!-- Rubik font import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <link rel="stylesheet" href="style.css">
@@ -15,8 +19,12 @@
 <!-- Color picker site : https://imagecolorpicker.com/ -->
 <body>
   <main>
-    <div class="background-shape">
+    <div class="bg-sh bg-l">
 
+    </div>
+
+    <div class="bg-sh bg-r">
+        
     </div>
 
     <div class="container">
@@ -40,33 +48,37 @@
                 <ul class="list-of-texts">
                   <li class="text-bubble user-text">That sounds great. I’d be happy with that.</li>
                   <li class="text-bubble user-text">Could you send over some pictures of your dog, please?</li>
+                  <li class="friend-text chat-gallery">
+                      <img src="./images/dog-image-1.jpg" />
+                      <img src="./images/dog-image-2.jpg" />
+                      <img src="./images/dog-image-3.jpg" />
+                  </li>
                   <li class="text-bubble friend-text">Here are a few pictures. She’s a happy girl!</li>
                   <li class="text-bubble friend-text">Can you make it?</li>
                   <li class="text-bubble user-text">She looks so happy! The time we discussed works. How long shall I take her out for?</li>
-                  <li class="text-bubble user-text user-vote">
+                  <li class="text-bubble user-text vote-field">
+                    <label>
+                      <input type="radio" name="radio" class="vote-radio "/>
+                      30 minute walk 
+                    </label>
+                    <span class="vote-price highlighted-text">$29</span>
                       </li>
-                  <li class="text-bubble user-text user-vote"> 
+                  <li class="text-bubble user-text vote-field">
+                    <label>
+                      <input type="radio" name="radio" class="vote-radio " />
+                      1 hour walk
+                    </label>
+                    <span class="vote-price highlighted-text">$49</span>
+                    </li>
                    </li>
                 </ul>
-
-
-
+                <div class="chat-input-wrapper">
+                  <input type="text" placeholder="Type a message…" class="chat-txt-input">
+                  <i class="send-icon" aria-hidden="true"><img src="./images/send-icon.svg" /></i>
+                </div>
               
 
-              
-
-              
-
-              
-              Type a message…
-              
-              
-              
-              
-          
             </div>
-            
-                   
           </div>
       </div>
       <div class="page-introduction">
